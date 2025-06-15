@@ -56,3 +56,239 @@
   vertical-align: middle;
   margin-right: 0.3em;
 }
+
+.split-screen {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 260px; /* Slightly taller for text */
+  margin-top: 40px;
+}
+
+.panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center content vertically */
+  background: rgba(40, 44, 52, 0.95);
+  border-right: 1px solid #444;
+  padding: 0.5em;
+  overflow: hidden;
+  height: 100%; /* Ensure panel height matches split-screen */
+}
+
+.panel:last-child {
+  border-right: none;
+}
+
+.panel h2 {
+  margin-bottom: 0.5em;
+  font-size: 1.3em;
+  color: #61dafb;
+}
+
+.panel-gif {
+  width: 95%;
+  height: 130px; /* Slightly shorter to allow space for text */
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.3em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.social-actions {
+  display: flex;
+  gap: 1em;
+  font-size: 1.1em;
+  margin-top: 0.5em;
+  align-items: center;
+}
+
+.heart {
+  color: #ff0000;
+}
+
+/* Optional: distinct backgrounds for each panel */
+.mmorpg { background: linear-gradient(135deg, #232526 0%, #414345 100%); }
+.social { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); }
+.art { background: linear-gradient(135deg, #ffaf7b 0%, #d76d77 100%); }
+.cyber { background: linear-gradient(135deg, #232526 0%, #0f2027 100%); }
+
+.mmorpg h2 {
+  color: #2ecc40; /* green */
+}
+.cyber h2 {
+  color: #ff4136; /* red */
+}
+
+.mmorpg p {
+  color: #2ecc40; /* green */
+  font-weight: bold;
+}
+
+.cyber p {
+  color: #ff4136; /* red */
+  font-weight: bold;
+}
+
+/* New styles for the GIF integration */
+.gif-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.gif-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.logo-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  width: 100vw;         /* Make the logo row span the full width */
+  max-width: 1400px;    /* Increase max width for more space */
+  padding: 0 2vw;       /* Add horizontal padding */
+}
+
+.logo-row img {
+  height: 40px;         /* Slightly taller logos */
+  width: auto;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 8px;
+  padding: 4px 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin: 0 0.5em;      /* Add horizontal margin between logos */
+}
+
+.rainbow-text {
+  font-weight: bold;
+  font-size: 1.1em;
+  background: linear-gradient(
+    90deg,
+    #ff0000,
+    #ff9900,
+    #ffee00,
+    #33ff00,
+    #00ffee,
+    #0066ff,
+    #cc00ff,
+    #ff0000
+  );
+  background-size: 400% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow-shimmer 3s linear infinite;
+}
+
+@keyframes rainbow-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.centerpiece {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 auto;
+  min-height: 220px;
+}
+
+.centerpiece-logo {
+  width: 180px;
+  height: 180px;
+  animation: spin 8s linear infinite;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.centerpiece-logo:hover {
+  transform: scale(1.12) rotate(20deg);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}  }    transform: translateX(-100%);  100% {  }    transform: translateX(100%);  0% {@keyframes scroll-horizontal {}  color: #fff;  font-weight: bold;  font-size: 1.1em;  animation: scroll-horizontal 8s linear infinite;  white-space: nowrap;  display: inline-block;.social-actions-scroll {}  margin-top: 0.5em;  height: 2em;  position: relative;  overflow: hidden;  width: 100%;.social-actions-scroll-wrapper {
+.social-actions-scroll-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 2em;
+  margin-top: 1em; /* Add margin if needed for spacing */
+  display: flex;
+  align-items: center; /* Center text vertically */
+  justify-content: center; /* Center text horizontally */
+}
+
+.social-actions-scroll {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-horizontal 8s linear infinite;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #fff;
+}
+
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.logo-footer {
+  width: 100vw;
+  background: #111;
+  padding: 1.5em 0 1em 0;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  box-shadow: 0 -2px 16px rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

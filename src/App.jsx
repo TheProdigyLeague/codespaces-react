@@ -26,14 +26,21 @@ function App() {
       {/* Panels */}
       <div className="split-screen" style={{ flex: '0 0 auto', marginTop: 'auto' }}>
         {/* Panel 1: MMORPG */}
-        <div className="panel mmorpg">
+        <div
+          className="panel mmorpg"
+          tabIndex={0}
+          onClick={() => window.open('https://worldofwarcraft.blizzard.com/', '_blank')}
+        >
           <h2>MMORPG Worlds</h2>
           <img
             src="https://media.giphy.com/media/1kkxWqT5nvLXupUTwK/giphy.gif"
             alt="World of Warcraft Preview"
             className="panel-gif"
           />
-          <p>Immersive Real-Time Adventures</p>
+          <p>
+            <span className="sword" role="img" aria-label="sword">🗡️</span>
+            Immersive Real-Time Adventures
+          </p>
         </div>
         {/* Panel 2: Social Media */}
         <div className="panel social">

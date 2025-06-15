@@ -3,8 +3,11 @@
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  height: 60px;
+  margin: 0;
 }
 
 .App-header {
@@ -16,6 +19,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  position: relative;
 }
 
 .App-link {
@@ -28,4 +32,27 @@
 
 .small {
   font-size: 0.75rem;
+}
+
+.atom {
+  font-size: 1.2em;
+  margin-left: 0.3em;
+  vertical-align: middle;
+}
+
+.react-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  margin-top: 0; /* Remove extra margin if any */
+}
+
+/* Add a class for the React logo */
+.React-logo {
+  height: 1em;
+  vertical-align: middle;
+  margin-right: 0.3em;
 }

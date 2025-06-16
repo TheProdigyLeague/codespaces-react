@@ -1,6 +1,17 @@
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [showVirus, setShowVirus] = useState(false);
+
+  const handleCyberClick = () => {
+    setShowVirus(true);
+  };
+
+  const handleRecover = () => {
+    setShowVirus(false);
+  };
+
   return (
     <div className="App" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
       {/* Top Section: Welcome Banner */}
@@ -43,7 +54,11 @@ function App() {
           </p>
         </div>
         {/* Panel 2: Social Media */}
-        <div className="panel social">
+        <div
+          className="panel social"
+          tabIndex={0}
+          onClick={() => window.open('https://meta.com/', '_blank')}
+        >
           <h2>Social Media</h2>
           <img
             src="https://media.giphy.com/media/3o6Zt6ML6BklcajjsA/giphy.gif"
@@ -60,7 +75,11 @@ function App() {
           </div>
         </div>
         {/* Panel 3: Art */}
-        <div className="panel art">
+        <div
+          className="panel art"
+          tabIndex={0}
+          onClick={() => window.open('https://unity.com', '_blank')}
+        >
           <h2>Creative Arts</h2>
           <img
             src="https://media.giphy.com/media/3o6Zt481isNVuQI1l6/giphy.gif"
@@ -72,7 +91,11 @@ function App() {
           </p>
         </div>
         {/* Panel 4: Cybersecurity */}
-        <div className="panel cyber">
+        <div
+          className="panel cybersecurity"
+          tabIndex={0}
+          onClick={handleCyberClick}
+        >
           <h2>Cybersecurity</h2>
           <img
             src="https://media.giphy.com/media/26ufnwz3wDUli7GU0/giphy.gif"
@@ -84,6 +107,36 @@ function App() {
           </p>
         </div>
       </div>
+
+      {/* Virus Simulation Modal */}
+      {showVirus && (
+        <div className="ransomware-modal">
+          <h1>⚠️ Virus Detected! ⚠️</h1>
+          <p>
+            Your system has been <span style={{ color: '#ff3333', fontWeight: 'bold' }}>infected</span>.<br />
+            All your files are now encrypted.<br />
+            <span style={{ color: '#fff', fontSize: '1.2em' }}>Send 1 BTC to recover your data.</span>
+          </p>
+          <button
+            style={{
+              marginTop: '2em',
+              padding: '0.8em 2em',
+              fontSize: '1.1em',
+              background: '#222',
+              color: '#fff',
+              border: '2px solid #ff3333',
+              borderRadius: '8px',
+              cursor: 'pointer'
+            }}
+            onClick={handleRecover}
+          >
+            Recover System
+          </button>
+          <p style={{ marginTop: '2em', fontSize: '0.9em', color: '#fff' }}>
+            (This is a harmless simulation for educational purposes.)
+          </p>
+        </div>
+      )}
 
       {/* Centerpiece image (now between panels and logos) */}
       <div className="centerpiece">

@@ -248,3 +248,17 @@
   z-index: 9999;
   font-family: 'Courier New', Courier, monospace;
 }
+
+.rgb-text {
+  background: linear-gradient(90deg, #ff0000, #00ff00, #0000ff, #ff0000 80%);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rgb-shimmer 2.5s linear infinite;
+  font-weight: bold;
+}
+
+@keyframes rgb-shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}

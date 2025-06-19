@@ -72,7 +72,7 @@ function App() {
           <h2>MMORPG Worlds</h2>
           <img
             src="https://media.giphy.com/media/1kkxWqT5nvLXupUTwK/giphy.gif"
-            alt="World of Warcraft Preview"
+            alt="MMORPG Adventure Preview"
             className="panel-gif"
           />
           <p>
@@ -88,11 +88,11 @@ function App() {
         >
           <h2>Social Media</h2>
           <img
-            src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif"
+            src="https://media.giphy.com/media/5GoVLqeAOo6PK/giphy.gif"
             alt="Social Media Preview"
             className="panel-gif"
           />
-          <p className="rainbow-text">
+          <p className="rgb-text">
             <span role="img" aria-label="chat">💬</span> Connect & Share
           </p>
         </div>
@@ -129,7 +129,7 @@ function App() {
         </div>
         {/* Panel 4: Cybersecurity */}
         <div
-          className="panel cybersecurity"
+          className="panel cyber"
           tabIndex={0}
           onClick={handleCyberClick}
         >

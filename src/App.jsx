@@ -40,7 +40,7 @@ function App() {
   ];
 
   return (
-    <div className="App" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+    <div className="App">
       {/* Top Section: Welcome Banner */}
       <header className="App-header" style={{ flex: '0 0 auto', minHeight: 'unset', height: 'auto', justifyContent: 'flex-start' }}>
         <img
@@ -61,8 +61,22 @@ function App() {
         </p>
       </header>
 
+      {/* Stock Market Ticker */}
+      <div className="stock-ticker-container">
+        <div className="stock-ticker">
+          <span>
+            📈 AAPL  $212.34 ▲1.23% &nbsp;|&nbsp;
+            🟢 MSFT  $399.12 ▲0.87% &nbsp;|&nbsp;
+            🔴 GOOGL $128.45 ▼0.56% &nbsp;|&nbsp;
+            🟢 META  $312.01 ▲2.14% &nbsp;|&nbsp;
+            🔴 TSLA  $189.77 ▼1.02% &nbsp;|&nbsp;
+            🟢 NVDA  $1200.55 ▲3.45%
+          </span>
+        </div>
+      </div>
+
       {/* Panels */}
-      <div className="split-screen" style={{ flex: '0 0 auto', marginTop: 'auto' }}>
+      <div className="split-screen">
         {/* Panel 1: MMORPG */}
         <div
           className="panel mmorpg"
@@ -142,6 +156,19 @@ function App() {
           <p>
             <span role="img" aria-label="shield">🛡️</span> Defend Against Attackers
           </p>
+        </div>
+      </div>
+
+      {/* News Ticker */}
+      <div className="news-ticker-container">
+        <div className="news-ticker">
+          <span>
+            📰 Breaking: New MMORPG expansion announced! &nbsp;|&nbsp;
+            🎨 Art Gallery: User masterpieces now featured! &nbsp;|&nbsp;
+            🛡️ Cybersecurity: Major vulnerability patched today. &nbsp;|&nbsp;
+            💬 Social Media: Trending - #ReactRocks &nbsp;|&nbsp;
+            ⚔️ WoW: Top streamer hits level cap in record time!
+          </span>
         </div>
       </div>
 

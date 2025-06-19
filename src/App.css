@@ -1,5 +1,23 @@
+/* Ensure box-sizing is border-box everywhere */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body, html, #root, .App {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 0;
+  width: 100%;
 }
 
 .App-logo {
@@ -12,14 +30,15 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  /* Remove min-height, height, flex, and justify-content */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
   position: relative;
+  padding: 1.5em 0 0.5em 0; /* Add some vertical padding if you want */
+  margin: 0; /* Remove any margin */
 }
 
 .App-link {
@@ -60,22 +79,27 @@
 .split-screen {
   display: flex;
   flex-direction: row;
-  width: 100vw;
-  height: 260px; /* Slightly taller for text */
-  margin-top: 40px;
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  margin: 0;           /* Remove vertical margin */
+  padding: 0;
+  min-width: 0;
 }
 
 .panel {
-  flex: 1;
+  flex: 1 1 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgba(40, 44, 52, 0.95);
-  border-right: 1px solid #444;
-  padding: 0.5em;
-  overflow: hidden;
   height: 100%;
+  min-height: 0;
+  min-width: 0;
+  overflow-y: auto;
+  margin: 0;           /* Remove vertical margin */
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  box-sizing: border-box;
   transition: 
     transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1);
@@ -250,7 +274,7 @@
 }
 
 .rgb-text {
-  background: linear-gradient(90deg, #ff0000, #00ff00, #0000ff, #ff0000 80%);
+  background: linear-gradient(90deg, #ff0000, #00ff0000, #0000ff, #ff0000 80%);
   background-size: 300% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -261,4 +285,67 @@
 @keyframes rgb-shimmer {
   0% { background-position: 0% 50%; }
   100% { background-position: 100% 50%; }
+}
+
+.news-ticker-container {
+  width: 100vw;
+  overflow: hidden;
+  background: #181a2b;
+  border-top: 2px solid #6441a5;
+  border-bottom: 2px solid #6441a5;
+  position: relative;
+  height: 2.5em;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
+.news-ticker {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100vw;
+  animation: ticker-scroll 22s linear infinite;
+  font-size: 1.1em;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+}
+
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.stock-ticker-container {
+  width: 100vw;
+  overflow: hidden;
+  background: #101820;
+  border-bottom: 2px solid #21ce99;
+  position: relative;
+  height: 2.2em;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
+.stock-ticker {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100vw;
+  animation: ticker-scroll 18s linear infinite;
+  font-size: 1em;
+  color: #21ce99;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+}
+
+.stock-ticker span .up {
+  color: #21ce99;
+}
+.stock-ticker span .down {
+  color: #ff3333;
 }
